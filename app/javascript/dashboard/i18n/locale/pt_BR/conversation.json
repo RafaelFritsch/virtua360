@@ -249,9 +249,9 @@
       "NEW_LINK": "Clique aqui para criar uma caixa de entrada"
     },
     "LABELS": {
-      "TITLE": "Organizar conversas com marcadores",
+      "TITLE": "Organizar conversas com etiquetas",
       "DESCRIPTION": "Etiquetas fornecem uma forma mais fácil de organizar a sua conversa. Criar algumas estiquetas como #solicitação-suporte, #fatura-assunto etc., assim você poderá futuramente utiliza-las em uma conversa posteriormente.",
-      "NEW_LINK": "Clique aqui para criar marcadores"
+      "NEW_LINK": "Clique aqui para criar etiquetas"
     }
   },
   "CONVERSATION_SIDEBAR": {
@@ -264,7 +264,7 @@
     "ACCORDION": {
       "CONTACT_DETAILS": "Detalhes do contato",
       "CONVERSATION_ACTIONS": "Ações da conversa",
-      "CONVERSATION_LABELS": "Marcador da conversa",
+      "CONVERSATION_LABELS": "Etiqueta da conversa",
       "CONVERSATION_INFO": "Informação da conversa",
       "CONTACT_ATTRIBUTES": "Atributos do contato",
       "PREVIOUS_CONVERSATION": "Conversas anteriores",

@@ -20,7 +20,7 @@
       :has-accounts="hasAccounts"
     />
     <woot-snackbar-box />
-    <network-notification />
+    <!-- <network-notification /> -->
   </div>
   <loading-state v-else />
 </template>

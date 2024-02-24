@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <transition name="network-notification-fade" tag="div">
     <div v-show="showNotification" class="fixed top-4 left-2 z-50 group">
       <div
@@ -85,4 +85,4 @@ export default {
     },
   },
 };
-</script>
+</script> -->

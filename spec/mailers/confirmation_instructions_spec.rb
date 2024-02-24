@@ -16,7 +16,7 @@ RSpec.describe 'Devise::Mailer' do
     end
 
     it 'has the correct header data' do
-      expect(mail.reply_to).to contain_exactly('accounts@chatwoot.com')
+      expect(mail.reply_to).to contain_exactly('accounts@virtuacrm.com')
       expect(mail.to).to contain_exactly(confirmable_user.email)
       expect(mail.subject).to eq('Confirmation Instructions')
     end
@@ -26,7 +26,7 @@ RSpec.describe 'Devise::Mailer' do
     end
 
     it 'does not refer to the inviter and their account' do
-      expect(mail.body).not_to match('has invited you to try out Chatwoot!')
+      expect(mail.body).not_to match('has invited you to try out VirtuaCRM!')
       expect(mail.body).to match('We have a suite of powerful tools ready for you to explore.')
     end
 

@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <banner
     v-if="shouldShowBanner"
     color-scheme="alert"
@@ -79,4 +79,4 @@ export default {
     },
   },
 };
-</script>
+</script> -->

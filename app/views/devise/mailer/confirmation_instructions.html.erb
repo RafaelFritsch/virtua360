@@ -1,20 +1,20 @@
-<p>Hi <%= @resource.name %>,</p>
+<p>Olá <%= @resource.name %>,</p>
 
 <% account_user = @resource&.account_users&.first %>
 
 <% if account_user&.inviter.present? && @resource.unconfirmed_email.blank? %>
-  <p><%= account_user.inviter.name %>, with <%= account_user.account.name %>, has invited you to try out <%= global_config['BRAND_NAME'] || 'Chatwoot' %>.</p>
+  <p><%= account_user.inviter.name %>, com <%= account_user.account.name %>, lhe enviou acesso para o <%= global_config['BRAND_NAME'] || 'VirtuaCRM' %>.</p>
 <% end %>
 
 <% if @resource.confirmed? %>
-  <p>You can login to your <%= global_config['BRAND_NAME'] || 'Chatwoot' %> account through the link below:</p>
+  <p>Você pode acessar o <%= global_config['BRAND_NAME'] || 'VirtuaCRM' %> através do seguinte link:</p>
 <% else %>
   <% if account_user&.inviter.blank? %>
   <p>
-    Welcome to <%= global_config['BRAND_NAME'] || 'Chatwoot' %>! We have a suite of powerful tools ready for you to explore. Before that we quickly need to verify your email address to know it's really you.
+    Olá! <%= global_config['BRAND_NAME'] || 'VirtuaCRM' %>! Temos um poderoso sistema que vai te ajudar nas tarefas.
   </p>
   <% end %>
-  <p>Please take a moment and click the link below and activate your account.</p>
+  <p>Por favor, clique no link para ativar sua conta.</p>
 <% end %>
 
 

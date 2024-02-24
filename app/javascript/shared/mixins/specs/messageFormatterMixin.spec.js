@@ -9,9 +9,9 @@ describe('messageFormatterMixin', () => {
     };
     const wrapper = shallowMount(Component);
     const message =
-      '<b>Chatwoot is an opensource tool. https://www.chatwoot.com</b>';
+      '<b>VirtuaCRM is an opensource tool. https://www.virtuacrm.com</b>';
     expect(wrapper.vm.getPlainText(message)).toMatch(
-      'Chatwoot is an opensource tool. https://www.chatwoot.com'
+      'VirtuaCRM is an opensource tool. https://www.virtuacrm.com'
     );
   });
 });
