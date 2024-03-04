@@ -81,3 +81,7 @@
   enabled: true
 - name: disable_whatsapp_messaging_window
   enabled: false
+- name: hide_integrations
+  enabled: false
+  - name: hide_all_inbox_for_agent
+  enabled: false

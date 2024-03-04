@@ -121,6 +121,7 @@ export default {
       isFeatureEnabledonAccount: 'accounts/isFeatureEnabledonAccount',
       globalConfig: 'globalConfig/get',
     }),
+    
     isCountZero() {
       return this.menuItem.count === 0;
     },

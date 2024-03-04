@@ -72,6 +72,7 @@ export default {
   computed: {
     ...mapGetters({
       isFeatureEnabledonAccount: 'accounts/isFeatureEnabledonAccount',
+      currentRole: 'getCurrentRole',
     }),
     hasSecondaryMenu() {
       return this.menuConfig.menuItems && this.menuConfig.menuItems.length;
@@ -96,7 +97,18 @@ export default {
         return true;
       });
     },
+    hideAllInboxForAgents() {
+      return (
+        this.isFeatureEnabledonAccount(
+          this.accountId,
+          'hide_all_inbox_for_agent'
+        ) && this.currentRole !== 'administrator'
+      );
+    },
     inboxSection() {
+      if (!this.hideAllInboxForAgents){
+        return {};
+      }
       return {
         icon: 'folder',
         label: 'INBOXES',
