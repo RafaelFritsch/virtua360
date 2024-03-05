@@ -106,35 +106,40 @@ export default {
       );
     },
     inboxSection() {
-      if (!this.hideAllInboxForAgents){
-        return {};
+      if (this.hideAllInboxForAgents) {
+        return {}; // Retorna um objeto vazio se hide_all_inbox_for_agent estiver marcado como true
+      } else {
+        if (this.currentRole === 'administrator') {
+          return {
+            icon: 'folder',
+            label: 'INBOXES',
+            hasSubMenu: true,
+            newLink: this.showNewLink(FEATURE_FLAGS.INBOX_MANAGEMENT),
+            newLinkTag: 'NEW_INBOX',
+            key: 'inbox',
+            toState: frontendURL(`accounts/${this.accountId}/settings/inboxes/new`),
+            toStateName: 'settings_inbox_new',
+            newLinkRouteName: 'settings_inbox_new',
+            children: this.inboxes
+              .map(inbox => ({
+                id: inbox.id,
+                label: inbox.name,
+                truncateLabel: true,
+                toState: frontendURL(
+                  `accounts/${this.accountId}/inbox/${inbox.id}`
+                ),
+                type: inbox.channel_type,
+                phoneNumber: inbox.phone_number,
+                reauthorizationRequired: inbox.reauthorization_required,
+              }))
+              .sort((a, b) =>
+                a.label.toLowerCase() > b.label.toLowerCase() ? 1 : -1
+              ),
+          };
+        } else {
+          return {}; // Retorna um objeto vazio se o usuário não for administrador
+        }
       }
-      return {
-        icon: 'folder',
-        label: 'INBOXES',
-        hasSubMenu: true,
-        newLink: this.showNewLink(FEATURE_FLAGS.INBOX_MANAGEMENT),
-        newLinkTag: 'NEW_INBOX',
-        key: 'inbox',
-        toState: frontendURL(`accounts/${this.accountId}/settings/inboxes/new`),
-        toStateName: 'settings_inbox_new',
-        newLinkRouteName: 'settings_inbox_new',
-        children: this.inboxes
-          .map(inbox => ({
-            id: inbox.id,
-            label: inbox.name,
-            truncateLabel: true,
-            toState: frontendURL(
-              `accounts/${this.accountId}/inbox/${inbox.id}`
-            ),
-            type: inbox.channel_type,
-            phoneNumber: inbox.phone_number,
-            reauthorizationRequired: inbox.reauthorization_required,
-          }))
-          .sort((a, b) =>
-            a.label.toLowerCase() > b.label.toLowerCase() ? 1 : -1
-          ),
-      };
     },
     labelSection() {
       return {
