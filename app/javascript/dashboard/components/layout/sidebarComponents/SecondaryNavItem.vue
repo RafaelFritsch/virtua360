@@ -176,18 +176,22 @@ export default {
       );
     },
     isIntegrationsSettings() {
-      return (
-        this.$store.state.route.name === 'settings_integrations_webhook' &&
-        this.menuItem.toStateName === 'settings_integrations' &&
-        this.currentUser.type === 'SuperAdmin'
-      );
+      if (this.currentUser.type !== 'SuperAdmin')
+        return{};
+      else
+        return (
+          this.$store.state.route.name === 'settings_integrations_webhook' &&
+          this.menuItem.toStateName === 'settings_integrations'
+        );
     },
     isApplicationsSettings() {
-      return (
-        this.$store.state.route.name === 'settings_applications_integration' &&
-        this.menuItem.toStateName === 'settings_applications' &&
-        this.currentUser.type === 'SuperAdmin'
-      );
+      if (this.currentUser.type !== 'SuperAdmin')
+        return{};
+      else
+        return (
+          this.$store.state.route.name === 'settings_applications_integration' &&
+          this.menuItem.toStateName === 'settings_applications'
+        );
     },
     isCurrentRoute() {
       return this.$store.state.route.name.includes(this.menuItem.toStateName);
