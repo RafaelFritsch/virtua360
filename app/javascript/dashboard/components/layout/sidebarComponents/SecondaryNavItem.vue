@@ -120,6 +120,8 @@ export default {
       accountId: 'getCurrentAccountId',
       isFeatureEnabledonAccount: 'accounts/isFeatureEnabledonAccount',
       globalConfig: 'globalConfig/get',
+      currentRole: 'getCurrentRole',
+      currentUser: 'getCurrentUser',
     }),
     
     isCountZero() {
@@ -176,13 +178,15 @@ export default {
     isIntegrationsSettings() {
       return (
         this.$store.state.route.name === 'settings_integrations_webhook' &&
-        this.menuItem.toStateName === 'settings_integrations'
+        this.menuItem.toStateName === 'settings_integrations' &&
+        this.currentUser.type === 'SuperAdmin'
       );
     },
     isApplicationsSettings() {
       return (
         this.$store.state.route.name === 'settings_applications_integration' &&
-        this.menuItem.toStateName === 'settings_applications'
+        this.menuItem.toStateName === 'settings_applications' &&
+        this.currentUser.type === 'SuperAdmin'
       );
     },
     isCurrentRoute() {
