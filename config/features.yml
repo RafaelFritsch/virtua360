@@ -83,5 +83,5 @@
   enabled: false
 - name: hide_integrations
   enabled: false
-  - name: hide_all_inbox_for_agent
+- name: hide_all_inbox_for_agent
   enabled: false
