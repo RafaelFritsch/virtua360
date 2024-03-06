@@ -176,21 +176,15 @@ export default {
       );
     },
     isIntegrationsSettings() {
-      if (this.currentUser.type !== 'SuperAdmin')
-        return{};
-      else
-        return (
-          this.$store.state.route.name === 'settings_integrations_webhook' &&
-          this.menuItem.toStateName === 'settings_integrations'
-        );
+      return (
+        this.$store.state.route.name === 'settings_integrations_webhook' &&
+        this.menuItem.toStateName === 'settings_integrations'
+      );
     },
     isApplicationsSettings() {
-      if (this.currentUser.type !== 'SuperAdmin')
-        return{};
-      else
         return (
           this.$store.state.route.name === 'settings_applications_integration' &&
-          this.menuItem.toStateName === 'settings_applications'
+          this.menuItem.toStateName === 'settings_applications' &&
         );
     },
     isCurrentRoute() {
